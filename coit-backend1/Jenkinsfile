@@ -60,8 +60,8 @@ pipeline {
                 }
         }
 	
-	post {
-		stage('post build') {
+	stage('post build') {
+	    post {
         		always {
             		// Archive artifacts
             		archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
@@ -69,7 +69,6 @@ pipeline {
             		// Test reports
             		junit '**/target/surefire-reports/*.xml'
        		 		}
-             
-   		 }
+	   	 }
 	}
 }
