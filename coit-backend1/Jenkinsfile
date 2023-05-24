@@ -2,12 +2,12 @@ pipeline {
     agent any
     
     stages {
-//         stage('Checkout') {
-//             steps {                 
-//                 // Clone the repository from GitHub
-//                 url: 'git@github.com:sandeshmarakini/coit-simple-microservice.git'
-//             }
-//         }
+        stage('Checkout') {
+            steps {                 
+                // Clone the repository from GitHub
+                url: 'git@github.com:sandeshmarakini/coit-simple-microservice.git'
+            }
+        }
         
         stage('Build') {
             steps {      
