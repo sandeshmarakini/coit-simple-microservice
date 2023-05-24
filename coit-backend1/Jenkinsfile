@@ -61,7 +61,7 @@ pipeline {
         }
 	
 	post {
-		stage{
+		stage('post build') {
         		always {
             		// Archive artifacts
             		archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
