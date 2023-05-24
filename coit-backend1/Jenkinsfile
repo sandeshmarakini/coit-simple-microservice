@@ -60,18 +60,18 @@ pipeline {
                 }
         }
 	
-	stage('post build') {
-			    post {
-				    steps{
-					always {
-					// Archive artifacts
-					archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+	
+	post {
+				    
+		always {
+		// Archive artifacts
+		archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
 
-					// Test reports
-					junit '**/target/surefire-reports/*.xml'
-						}
-					 }
-				}
-			    }	
+		// Test reports
+		junit '**/target/surefire-reports/*.xml'
+			}
+		
+		}
+			    	
 	}
 }
