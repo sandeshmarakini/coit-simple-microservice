@@ -61,17 +61,17 @@ pipeline {
         }
 	
 	
-	post {
+// 	post {
 				    
-		always {
-		// Archive artifacts
-		archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+// 		always {
+// 		// Archive artifacts
+// 		archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
 
-// 		// Test reports
-// 		junit '**/target/surefire-reports/*.xml'
-			}
+// // 		// Test reports
+// // 		junit '**/target/surefire-reports/*.xml'
+// 			}
 		
-		}
+// 		}
 			    	
 	}
 }
