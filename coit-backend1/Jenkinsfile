@@ -41,7 +41,7 @@ pipeline {
 		        // Run the docker container
 		        sh 'cd coit-backend1 && docker run --name maven-build -d sandeshmarakini/pipeline-1-java:$image_tag'
 		
-		        sh 'sleep 20'
+		        sh 'sleep 60'
 		        sh 'docker ps'
 		        sh 'docker images'
             }
