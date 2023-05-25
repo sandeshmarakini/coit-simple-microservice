@@ -32,14 +32,14 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                // Build Docker image
-                sh 'cd coit-backend1 && docker build -t sandeshmarakini/pipeline-1-java:$image_tag .'
+                	// Build Docker image
+                	sh 'cd coit-backend1 && docker build -t sandeshmarakini/pipeline-1-java:$image_tag .'
                 
-                // Push the Docker image to the registry
-                sh 'cd coit-backend1 && docker push sandeshmarakini/pipeline-1-java:$image_tag'
+                	// Push the Docker image to the registry
+                	sh 'cd coit-backend1 && docker push sandeshmarakini/pipeline-1-java:$image_tag'
 
 		        // Run the docker container
-		        sh 'cd coit-backend1 && docker run --name maven-build -d sandeshmarakini/pipeline-1-java:$image_tag'
+		        sh 'cd coit-backend1 && docker run -d -p 1234:8080 --name maven-build sandeshmarakini/pipeline-1-java:$image_tag'
 		
 		        sh 'sleep 60'
 		        sh 'docker ps'
